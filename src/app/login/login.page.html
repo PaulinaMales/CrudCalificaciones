@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title>REGISTRO DE CALIFICACIONES</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-grid [fixed]="true">
+  <ion-content class="ion-padding" color="light">
+    <form [formGroup]="credentials" (ngSubmit)="login()">
+      <ion-item fill="solid" class="ion-margin-bottom">
+        <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
+        <ion-note slot="error" *ngIf="(email.dirty || email.touched) && email.errors">Email is invalid</ion-note>
+      </ion-item>
+  
+      <ion-item fill="solid" class="ion-margin-bottom">
+        <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+        <ion-note slot="error" *ngIf="(password.dirty || password.touched) && password.errors">Password needs to be 6 characters</ion-note>
+      </ion-item>
+  
+      <ion-button expand="full" type="submit" [disabled]="!credentials.valid"  color="success">Login</ion-button>
+      <ion-button expand="full" type="button" (click)="register()"  color="success">Create account</ion-button>
+    </form>
+  </ion-content>
+</ion-grid>

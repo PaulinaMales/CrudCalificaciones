@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-button (click)="logout()">
+        <ion-icon slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title> Maestro </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-grid [fixed]="true">
+  <form [formGroup]="credentials">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>INGRESAR CALIFICACIONES</ion-card-title>
+      </ion-card-header> 
+      <ion-card-content style="text-align: justify;">
+        <ion-item>
+          <ion-label  position="floating">Estudiante</ion-label>
+          <ion-input  type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label   position="floating">Calificación</ion-label>
+          <ion-input  type="number"></ion-input>
+        </ion-item>
+
+        <ion-input label="Outline input" label-placement="floating" fill="outline"  [(ngModel)]="calificacion1" placeholder="Calificación 1"></ion-input>
+        <br/>
+        <ion-input label="Outline input" label-placement="floating" fill="outline" [(ngModel)]="calificacion2" placeholder="Calificación 2"></ion-input>
+        <br/>
+        <ion-input label="Outline input" label-placement="floating" fill="outline"  [(ngModel)]="calificacion3" placeholder="Calificación 3"></ion-input>
+        <br/>
+        <ion-input label="Outline input" label-placement="floating" fill="outline"  [(ngModel)]="calificacion4" placeholder="Calificación 4"></ion-input>
+        <br/>
+        <ion-input label="Outline input" label-placement="floating" fill="outline"  [(ngModel)]="calificacion5" placeholder="Calificación 5"></ion-input>       
+      </ion-card-content>  
+      <!--<ion-button fill="clear" color="success" >Guardar</ion-button>
+      <ion-button fill="clear" color="dark" >Calificación final</ion-button>-->
+      <ion-button  type="button" (click)="crearCalificacion()" color="success">Crear calificación</ion-button>
+      <ion-button type="button" (click)="editarCalificacion()" color="success">Editar calificación</ion-button>
+      <ion-button  type="button" (click)="borrarCalificacion()" color="success">Borrar calificación</ion-button>
+    </ion-card>
+  </form>
+</ion-grid>
+
