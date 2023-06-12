@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-button (click)="logout()">
+        <ion-icon slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title> Maestro </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card style="margin: 100px;">
+    <ion-title style="margin: 30px;"> ESTUDIANTES: </ion-title>
+      <ion-card-content>
+        <ion-list>
+          <ion-item *ngFor="let note of notes" (click)="openNote(note)">
+            <ion-label>
+              {{ note.title }}
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+  </ion-card >
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" color="blue">
+    <ion-fab-button (click)="addNote()" color="danger">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
